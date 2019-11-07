@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -62,31 +64,41 @@ public class MainActivity extends AppCompatActivity {
         int Dvalue = Roll_the_dice();
         TextView TVr = this.findViewById(R.id.textView);
         TVr.setText(Integer.toString(Dvalue));
-        TextView D = this.findViewById(R.id.textView2);
 
-        if(Dvalue==1)
+        TextView D = this.findViewById(R.id.textView2);
+        List<String> Dbreakers = new ArrayList<>();
+        Dbreakers.add("If you could go anywhere in the world, where would you go?");
+        Dbreakers.add("If you were stranded on a desert island, what three things would you want to take with you?");
+        Dbreakers.add("If you could eat only one food for the rest of your life, what would that be?");
+        Dbreakers.add("If you won a million dollars, what is the first thing you would buy?");
+        Dbreakers.add("If you could spaned the day with one fictional character, who would it be?");
+        Dbreakers.add("If you found a magic lantern and a genie gave you three wishes, what would you wish");
+
+
+
+       if(Dvalue==1)
         {
-            D.setText("If you could go anywhere in the world, where would you go?");
+            D.setText(Dbreakers.get(0));
         }
         else if(Dvalue==2)
         {
-            D.setText("If you were stranded on a desert island, what three things would you want to take with you?");
+            D.setText(Dbreakers.get(1));
         }
         else if(Dvalue==3)
         {
-            D.setText("If you could eat only one food for the rest of your life, what would that be?");
+            D.setText(Dbreakers.get(2));
         }
         else if(Dvalue==4)
         {
-            D.setText("If you won a million dollars, what is the first thing you would buy?");
+            D.setText(Dbreakers.get(3));
         }
         else if(Dvalue==5)
         {
-            D.setText("If you could spaned the day with one fictional character, who would it be?");
+            D.setText(Dbreakers.get(4));
         }
         else if(Dvalue==6)
         {
-            D.setText("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
+            D.setText(Dbreakers.get(5));
         }
         else
         {
